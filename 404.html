@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CA Log has moved</title>
+<script>
+  // CA Log moved to the Integrity-Structural org. Keep the path, query, and hash
+  // so password-reset and email links still land on the right page.
+  var path = location.pathname;
+  if (path === "/ca-log" || path.indexOf("/ca-log/") === 0) {
+    location.replace("https://integrity-structural.github.io" + path + location.search + location.hash);
+  }
+</script>
+</head>
+<body>
+<p>CA Log has moved to <a href="https://integrity-structural.github.io/ca-log/">integrity-structural.github.io/ca-log</a>.</p>
+</body>
+</html>
