@@ -4,17 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>CA Log has moved</title>
+<title>This page has moved</title>
 <script>
-  // CA Log moved to the Integrity-Structural org. Keep the path, query, and hash
+  // Sites that moved off andrewcoul.github.io. Keep the path, query, and hash
   // so password-reset and email links still land on the right page.
-  var path = location.pathname;
-  if (path === "/ca-log" || path.indexOf("/ca-log/") === 0) {
-    location.replace("https://integrity-structural.github.io" + path + location.search + location.hash);
+  var moves = {
+    "/ca-log": "https://integrity-structural.github.io/ca-log",
+    // The tracker serves from the root of its Worker, so drop the prefix.
+    "/project-tracker": "https://integrity-tracker.acoulson4646.workers.dev"
+  };
+  for (var prefix in moves) {
+    var path = location.pathname;
+    if (path === prefix || path.indexOf(prefix + "/") === 0) {
+      location.replace(moves[prefix] + (path.slice(prefix.length) || "/") + location.search + location.hash);
+    }
   }
 </script>
 </head>
 <body>
-<p>CA Log has moved to <a href="https://integrity-structural.github.io/ca-log/">integrity-structural.github.io/ca-log</a>.</p>
+<p>This page has moved:</p>
+<ul>
+<li>CA Log: <a href="https://integrity-structural.github.io/ca-log/">integrity-structural.github.io/ca-log</a></li>
+<li>Project Tracker: <a href="https://integrity-tracker.acoulson4646.workers.dev/">integrity-tracker.acoulson4646.workers.dev</a></li>
+</ul>
 </body>
 </html>
